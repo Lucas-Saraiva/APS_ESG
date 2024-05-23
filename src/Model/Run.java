@@ -1,33 +1,43 @@
 package Model;
 
+import java.util.Date;
+
 public class Run {
 
 	public static void main(String[] args) {
 
-		Empresa empresa = new Empresa("Uber", 100);
+		Date dataAtual = new Date();
 
-		Pais pais = new Pais("Estado Unidos");
+		Empresa uber = new Empresa("UBER", "39528420492942", "Uber", dataAtual, dataAtual, "Redução de Gás Carbonico", "Ambiental");
 
-		Veiculo veiculo1 = new Veiculo("Onix", "Chevrolet", 2018, "Gasolina", 14);
-		Veiculo veiculo2 = new Veiculo("HB20", "Hyundai", 2020, "Gasolina", 12);
-		Veiculo veiculo3 = new Veiculo("Corsa", "Chevrolet", 2011, "Gasolina", 8);
+		System.out.println(uber.getNome());
 
-		empresa.adicionaVeiculo(veiculo1);
-		empresa.adicionaVeiculo(veiculo2);
-		empresa.adicionaVeiculo(veiculo3);
+		Pais brasil = new Pais("BR", "Brasil");
+		Pais usa = new Pais("US", "Estados Unidos das Américas");
+		Pais canada = new Pais("CA", "Canadá");
 
-		Viagem viagem = new Viagem(veiculo1, 10.0, 13.0, 18.0, pais);
-		Viagem viagem2 = new Viagem(veiculo2, 30.0, 16.0, 13.0, pais);
-		Viagem viagem3 = new Viagem(veiculo3, 96.0, 11.0, 14.0, pais);
+		uber.adicionaPais(brasil);
+		uber.adicionaPais(usa);
+		uber.adicionaPais(canada);
 
-		empresa.adicionaViagem(viagem);
-		empresa.adicionaViagem(viagem2);
-		empresa.adicionaViagem(viagem3);
+		uber.listarPais();
+
+		Veiculo veiculo = new Veiculo("CG3Y2I", "Onix", "Chevrolet", "2018", "1", 12.00);
+
+		uber.adicionaVeiculo(veiculo);
+
+		uber.listarVeiculos();
+
+		Viagem viagem = new Viagem(uber, veiculo, dataAtual, 100.00, brasil);
+
+		uber.adicionaViagem(viagem);
+		uber.listarViagens();
+
+		EmpresaDB db = new EmpresaDB();
 		
-		System.out.println(viagem.calculaCO2Emitido());
-
-//		empresa.listaVeiculos();
-//		empresa.listaViagens();
+		db.conexao();
+		
+		db.inserir(uber.getCodigo(), uber.getNome(), uber.getCnpj(), uber.getDataInicio(), uber.getDataFinal(), uber.getMeta(), uber.getIndicador());
 
 	}
 
