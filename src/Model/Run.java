@@ -12,32 +12,27 @@ public class Run {
 
 		System.out.println(uber.getNome());
 
-		Pais brasil = new Pais("BR", "Brasil");
-		Pais usa = new Pais("US", "Estados Unidos das Américas");
-		Pais canada = new Pais("CA", "Canadá");
+		Pais brasil = new Pais("BR");
 
-		uber.adicionaPais(brasil);
-		uber.adicionaPais(usa);
-		uber.adicionaPais(canada);
+		Combustivel combustivel = new Combustivel(1);
 
-		uber.listarPais();
-
-		Veiculo veiculo = new Veiculo("CG3Y2I", "Onix", "Chevrolet", "2018", "1", 12.00);
-
-		uber.adicionaVeiculo(veiculo);
-
-		uber.listarVeiculos();
+		Veiculo veiculo = new Veiculo("CG3Y2I", 558, 22, "2018", combustivel, 12.00);
 
 		Viagem viagem = new Viagem(uber, veiculo, dataAtual, 100.00, brasil);
 
-		uber.adicionaViagem(viagem);
-		uber.listarViagens();
-
 		EmpresaDB db = new EmpresaDB();
-		
 		db.conexao();
-		
 		db.inserir(uber.getCodigo(), uber.getNome(), uber.getCnpj(), uber.getDataInicio(), uber.getDataFinal(), uber.getMeta(), uber.getIndicador());
+
+		VeiculoDB db_veiculo = new VeiculoDB();
+		db_veiculo.conexao();
+		db_veiculo.inserir(558, veiculo.getAno(), veiculo.getPlaca(), veiculo.getCombustivel(), veiculo.getMediaKML(), uber);
+		veiculo.setCodigo(db_veiculo.consultaCodigo(veiculo.getPlaca()));
+
+		ViagemDB db_viagem = new ViagemDB();
+		db_viagem.conexao();
+		db_viagem.inserir(veiculo, viagem.getDataCorrida(), viagem.getDistancia(), viagem.getCo2Emitido(), viagem.getPais(), viagem.getEmpresa());
+		viagem.setCodigo(db_viagem.consultaCodigo(viagem.getVeiculo(), viagem.getDataCorrida(), viagem.getDistancia(), viagem.getCo2Emitido(), viagem.getPais(), viagem.getEmpresa()));
 
 	}
 

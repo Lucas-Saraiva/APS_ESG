@@ -19,10 +19,14 @@ public abstract class DB {
         }
     }
 
-    public void inserir() {
-    	
+    public void inserir(){
+
+    };
+
+    public void consultaCodigo() {
+
     }
-    
+
     public String getUrl() {
     	return this.url;
     }

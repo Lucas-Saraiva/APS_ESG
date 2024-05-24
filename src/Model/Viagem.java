@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Viagem {
 
+	private int codigo;
 	private Empresa empresa;
 	private Veiculo veiculo;
 	private Date dataCorrida;
@@ -20,8 +21,16 @@ public class Viagem {
 		this.setPais(pais);
 	}
 
+	public int getCodigo() {
+		return this.codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
 	public Empresa getEmpresa() {
-		return empresa;
+		return this.empresa;
 	}
 
 	public void setEmpresa(Empresa empresa) {
@@ -29,7 +38,7 @@ public class Viagem {
 	}
 
 	public Veiculo getVeiculo() {
-		return veiculo;
+		return this.veiculo;
 	}
 
 	public void setVeiculo(Veiculo veiculo) {
@@ -37,7 +46,7 @@ public class Viagem {
 	}
 
 	public Date getDataCorrida() {
-		return dataCorrida;
+		return this.dataCorrida;
 	}
 
 	public void setDataCorrida(Date dataCorrida) {
@@ -45,7 +54,7 @@ public class Viagem {
 	}
 
 	public double getDistancia() {
-		return distancia;
+		return this.distancia;
 	}
 
 	public void setDistancia(double distancia) {
@@ -53,7 +62,7 @@ public class Viagem {
 	}
 
 	public double getCo2Emitido() {
-		return co2Emitido;
+		return this.co2Emitido;
 	}
 
 	public void setCo2Emitido(double co2Emitido) {
@@ -61,7 +70,7 @@ public class Viagem {
 	}
 
 	public Pais getPais() {
-		return pais;
+		return this.pais;
 	}
 
 	public void setPais(Pais pais) {

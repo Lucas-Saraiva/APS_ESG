@@ -2,14 +2,15 @@
 
 public class Veiculo {
 
+	private int codigo;
 	private String placa;
-	private String modelo;
-	private String marca;
+	private int modelo;
+	private int marca;
 	private String ano;
-	private String combustivel;
+	private Combustivel combustivel;
 	private double mediaKML;
 
-	public Veiculo(String placa, String modelo, String marca, String ano, String combustivel, double mediaKML) {
+	public Veiculo(String placa, int modelo, int marca, String ano, Combustivel combustivel, double mediaKML) {
 		this.placa = placa;
 		this.modelo = modelo;
 		this.marca = marca;
@@ -18,19 +19,27 @@ public class Veiculo {
 		this.mediaKML = mediaKML;
 	}
 
-	public String getModelo() {
+	public int getCodigo() {
+		return this.codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+
+	public int getModelo() {
 		return this.modelo;
 	}
 
-	public void setModelo(String modelo) {
+	public void setModelo(int modelo) {
 		this.modelo = modelo;
 	}
 
-	public String getMarca() {
+	public int getMarca() {
 		return this.marca;
 	}
 
-	public void setMarca(String marca) {
+	public void setMarca(int marca) {
 		this.marca = marca;
 	}
 
@@ -42,11 +51,11 @@ public class Veiculo {
 		this.ano = ano;
 	}
 
-	public String getCombustivel() {
+	public Combustivel getCombustivel() {
 		return this.combustivel;
 	}
 
-	public void setCombustivel(String combustivel) {
+	public void setCombustivel(Combustivel combustivel) {
 		this.combustivel = combustivel;
 	}
 	

@@ -5,9 +5,8 @@ public class Pais {
 	private String codigo;
 	private String nome;
 
-	public Pais(String codigo, String nome) {
+	public Pais(String codigo) {
 		this.codigo = codigo;
-		this.nome = nome;
 	}
 
 	public String getNome() {
