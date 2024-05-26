@@ -12,18 +12,35 @@ public abstract class DB {
     public void conexao() {
         try {
             Class.forName("org.postgresql.Driver");
-            this.con = DriverManager.getConnection(this.getUrl(), this.getUsuario(), this.getSenha());
+            con = DriverManager.getConnection(this.getUrl(), this.getUsuario(), this.getSenha());
             System.out.println("Sucesso!");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    public void fecha(){
+        if (con != null) {
+            try {
+                if (!con.isClosed()) {
+                    con.close();
+                    System.out.println("Conexão fechada com sucesso.");
+                }
+            } catch (SQLException e) {
+                System.err.println("Erro ao fechar a conexão: " + e.getMessage());
+            }
+        }
+    }
+
     public void inserir(){
 
-    };
+    }
 
     public void consultaCodigo() {
+
+    }
+
+    public void selecionar(){
 
     }
 

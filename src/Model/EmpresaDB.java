@@ -24,4 +24,38 @@ public class EmpresaDB extends DB {
 
 	}
 
+	public Empresa selecionar(String codigo){
+        Empresa empresa = null;
+
+		String cnpj = null;
+		String nome = null;
+		Date dataInicio = null;
+		Date dataFinal = null;
+		String meta = null;
+		String indicador = null;
+
+        try (PreparedStatement stmt = con.prepareStatement("SELECT * FROM public.empresa WHERE codigo = ? ")) {
+
+            stmt.setString(1, codigo);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    codigo = rs.getString("codigo");
+                    nome = rs.getString("nome");
+                    cnpj = rs.getString("cnpj");
+                    dataInicio = rs.getDate("data_inicio");
+                    dataFinal = rs.getDate("data_final");
+                    meta = rs.getString("meta");
+                    indicador = rs.getString("indicador");
+                }
+            }
+
+            empresa = new Empresa(codigo, cnpj, nome, dataInicio, dataFinal, meta, indicador);
+
+        } catch (Exception e) {
+            System.err.println("Erro ao buscar Viagem: " + e.getMessage());
+        }
+        return empresa;
+    }
+
 }

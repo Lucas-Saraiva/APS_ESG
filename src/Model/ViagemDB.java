@@ -2,6 +2,7 @@ package Model;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Date;
 
 public class ViagemDB extends DB {
 
@@ -44,6 +45,49 @@ public class ViagemDB extends DB {
             System.err.println("Erro ao buscar Viagem: " + e.getMessage());
         }
         return codigo;
+    }
+
+    public Viagem selecionar(int codigo){
+        Viagem viagem = null;
+
+        int idVeiculo = 0;
+        String idPais = null;
+        String idEmpresa = null;
+
+        Date dataCorrida = null;
+        double distancia  = 0.00;
+        double co2_emitido = 0.00;
+
+        Empresa empresa = null;
+        Veiculo veiculo = null;
+        Pais pais = null;
+
+        try (PreparedStatement stmt = con.prepareStatement("SELECT * FROM public.viagem WHERE codigo = ? ")) {
+
+            stmt.setInt(1, codigo);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    codigo = rs.getInt("codigo");
+                    idVeiculo = rs.getInt("veiculo");
+                    dataCorrida = rs.getDate("data_corrida");
+                    distancia = rs.getDouble("distancia");
+                    co2_emitido = rs.getDouble("co2_emitido");
+                    idPais = rs.getString("pais");
+                    idEmpresa = rs.getString("empresa");
+                }
+            }
+
+            EmpresaDB empresaDB = new EmpresaDB();
+            empresaDB.conexao();
+            empresa = empresaDB.selecionar(idEmpresa);
+
+            viagem = new Viagem(empresa, veiculo, dataCorrida, distancia, pais);
+
+        } catch (Exception e) {
+            System.err.println("Erro ao buscar Viagem: " + e.getMessage());
+        }
+        return viagem;
     }
 
 }

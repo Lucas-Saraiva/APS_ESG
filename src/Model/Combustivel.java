@@ -7,6 +7,12 @@ public class Combustivel {
 
 	public Combustivel(int codigo) {
 		this.codigo = codigo;
+
+		CombustivelDB combustivelDB = new CombustivelDB();
+		combustivelDB.conexao();
+		this.setNome(combustivelDB.consultaCodigo(this.codigo));
+		combustivelDB.fecha();
+
 	}
 
 	public String getNome() {
@@ -23,6 +29,14 @@ public class Combustivel {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
+	}
+
+	public static void main(String[] args){
+
+		Combustivel combustivel = new Combustivel(2);
+
+		System.out.println(combustivel.getNome());
+
 	}
 
 }

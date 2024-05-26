@@ -17,6 +17,23 @@ public class Empresa {
 	private String meta;
 	private String indicador;
 
+	public Empresa(String codigo){
+
+		Empresa empresa = null;
+		EmpresaDB empresaDB = new EmpresaDB();
+		empresaDB.conexao();
+		empresa = empresaDB.selecionar(codigo);
+		empresaDB.fecha();
+
+		this.setCnpj(empresa.getCnpj());
+		this.setNome(empresa.getNome());
+		this.setDataInicio(empresa.getDataInicio());
+		this.setDataFinal(empresa.getDataFinal());
+		this.setMeta(empresa.getMeta());
+		this.setIndicador(empresa.getIndicador());
+
+	}
+
 	public Empresa(String codigo, String cnpj, String nome, Date dataInicio, Date dataFinal, String meta, String indicador ) {
 		this.codigo = codigo;
 		this.nome = nome;
@@ -46,12 +63,44 @@ public class Empresa {
 		this.codigo = codigo;
 	}
 
+	public void setDataInicio(Date dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
 	public Date getDataInicio() {
 		return this.dataInicio;
 	}
 
+	public void setDataFinal(Date dataFinal) {
+		this.dataFinal = dataFinal;
+	}
+
 	public Date getDataFinal() {
 		return this.dataFinal;
+	}
+
+	public String getCnpj() {
+		return cnpj;
+	}
+
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+
+	public String getMeta() {
+		return meta;
+	}
+
+	public void setMeta(String meta) {
+		this.meta = meta;
+	}
+
+	public String getIndicador() {
+		return indicador;
+	}
+
+	public void setIndicador(String indicadores) {
+		this.indicador = indicadores;
 	}
 
 	public void adicionaPais(Pais pais) {
@@ -87,28 +136,12 @@ public class Empresa {
         }
 	}
 
-	public String getCnpj() {
-		return cnpj;
-	}
+	public static void main(String[] args){
+		Empresa empresa = new Empresa("UBER");
 
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
+		System.out.println(empresa.getNome());
+		System.out.println(empresa.getCnpj());
 
-	public String getMeta() {
-		return meta;
-	}
-
-	public void setMeta(String meta) {
-		this.meta = meta;
-	}
-
-	public String getIndicador() {
-		return indicador;
-	}
-
-	public void setIndicador(String indicadores) {
-		this.indicador = indicadores;
 	}
 
 }

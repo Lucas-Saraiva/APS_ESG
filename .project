@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-<<<<<<< HEAD
-	<name>APS</name>
-=======
 	<name>APS_ESG</name>
->>>>>>> master
 	<comment></comment>
 	<projects>
 	</projects>
@@ -18,8 +14,6 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-<<<<<<< HEAD
-=======
 	<filteredResources>
 		<filter>
 			<id>1716487567003</id>
@@ -31,5 +25,4 @@
 			</matcher>
 		</filter>
 	</filteredResources>
->>>>>>> master
 </projectDescription>
