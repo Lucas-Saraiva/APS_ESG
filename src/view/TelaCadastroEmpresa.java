@@ -1,28 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
-import controller.CadastroController;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/**
- *
- * @author Carlos Eduardo
- */
 public class TelaCadastroEmpresa extends javax.swing.JPanel {
 
-    private CadastroController controller;
-
-    /**
-     * Creates new form EmpresaInterface
-     */
     public TelaCadastroEmpresa() {
-        initComponents();
-    }
-
-    public TelaCadastroEmpresa(CadastroController controller) {
-        this.controller = controller;
         initComponents();
     }
 
@@ -53,6 +39,8 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
         campoCodigoEmpresa = new javax.swing.JTextField();
         textoTitulo = new javax.swing.JLabel();
         campoDataFinal = new javax.swing.JTextField();
+        btnSalvarEmpresa = new javax.swing.JButton();
+        btnLimparEmpresa = new javax.swing.JButton();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(600, 500));
@@ -127,6 +115,20 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
             }
         });
 
+        btnSalvarEmpresa.setText("Salvar");
+        btnSalvarEmpresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarEmpresaActionPerformed(evt);
+            }
+        });
+
+        btnLimparEmpresa.setText("Limpar");
+        btnLimparEmpresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparEmpresaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -145,11 +147,7 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
                             .addComponent(textoNomeEmpresa))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(campoMetaEmpresa, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(campoIndicador, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(campoPais, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoPais, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(campoNomeEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,7 +161,15 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(textoDataFinal)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(campoDataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(campoDataFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(btnSalvarEmpresa)
+                                .addGap(80, 80, 80)
+                                .addComponent(btnLimparEmpresa))
+                            .addComponent(campoCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(campoMetaEmpresa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                                .addComponent(campoIndicador, javax.swing.GroupLayout.Alignment.LEADING)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -199,7 +205,11 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoPaisEmpresa)
                     .addComponent(campoPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvarEmpresa)
+                    .addComponent(btnLimparEmpresa))
+                .addGap(24, 24, 24))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -252,7 +262,37 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoDataFinalActionPerformed
 
+    private void btnLimparEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparEmpresaActionPerformed
+        campoCNPJ.setText("");
+        campoCodigoEmpresa.setText("");
+        campoDataFinal.setText("");
+        campoDataInicio.setText("");
+        campoIndicador.setText("");
+        campoMetaEmpresa.setText("");
+        campoNomeEmpresa.setText("");
+        campoPais.setText("");
+    }//GEN-LAST:event_btnLimparEmpresaActionPerformed
+
+    private void btnSalvarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarEmpresaActionPerformed
+        String nomeEmpresa = campoNomeEmpresa.getText();
+        String cnpjEmpresa = campoCNPJ.getText();
+        String indicadorEmpresa = campoIndicador.getText();
+        String metaEmpresa = campoMetaEmpresa.getText();
+        String paisEmpresa = campoPais.getText();
+        Date finalEmpresa = null;
+        Date inicioEmpresa = null;
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        try {
+            finalEmpresa = formatador.parse(campoDataFinal.getText());
+            inicioEmpresa = formatador.parse(campoDataInicio.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaCadastroEmpresa.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
+    }//GEN-LAST:event_btnSalvarEmpresaActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLimparEmpresa;
+    private javax.swing.JButton btnSalvarEmpresa;
     private javax.swing.JTextField campoCNPJ;
     private javax.swing.JTextField campoCodigoEmpresa;
     private javax.swing.JTextField campoDataFinal;
