@@ -119,6 +119,19 @@ public class Veiculo {
 
 		Veiculo veiculo = new Veiculo("CG3Y2I");
 
+		Modelo modelo = new Modelo(608);
+		Marca marca = new Marca(22);
+		Combustivel combustivel = new Combustivel(1);
+		Empresa empresa = new Empresa("UBER");
+
+		Veiculo veiculoNovo = new Veiculo("JFD343J", modelo, marca, "2008", combustivel, 8.00, empresa);
+
+		VeiculoDB veiculoDB = new VeiculoDB();
+		veiculoDB.conexao();
+		veiculoDB.inserir(veiculoNovo.getModelo(), veiculoNovo.getAno(), veiculoNovo.getPlaca(), veiculoNovo.getCombustivel(), veiculoNovo.getMediaKML(), veiculoNovo.getEmpresa());
+
+		veiculoDB.fecha();
+
 		System.out.println(veiculo.getCodigo());
 
 	}

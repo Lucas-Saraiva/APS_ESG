@@ -16,10 +16,10 @@ public class EmpresaDB extends DB {
 	        stmt.setString(7, indicador);
 
 	        stmt.executeUpdate();
-	        System.out.println("Inserido com sucesso!");
+	        System.out.println("Empresa " + codigo + " cadastrada!");
 
 	    } catch (Exception e) {
-	        System.err.println("Erro ao inserir empresa: " + e.getMessage());
+	        System.err.println("Erro ao inserir Empresa "  + codigo + ": " + e.getMessage());
 	    }
 
 	}
@@ -53,9 +53,11 @@ public class EmpresaDB extends DB {
             empresa = new Empresa(codigo, cnpj, nome, dataInicio, dataFinal, meta, indicador);
 
         } catch (Exception e) {
-            System.err.println("Erro ao buscar Viagem: " + e.getMessage());
+            System.err.println("Erro ao buscar Empresa " + codigo + ": " + e.getMessage());
         }
+
         return empresa;
+
     }
 
 }

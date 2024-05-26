@@ -13,7 +13,7 @@ public abstract class DB {
         try {
             Class.forName("org.postgresql.Driver");
             con = DriverManager.getConnection(this.getUrl(), this.getUsuario(), this.getSenha());
-            System.out.println("Sucesso!");
+            System.out.println("Conexão realizada!");
         } catch (Exception e) {
             e.printStackTrace();
         }

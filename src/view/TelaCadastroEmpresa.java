@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.CadastroController;
+// import controller.CadastroController;
 
 /**
  *
@@ -12,7 +12,7 @@ import controller.CadastroController;
  */
 public class TelaCadastroEmpresa extends javax.swing.JPanel {
 
-    private CadastroController controller;
+    // private CadastroController controller;
 
     /**
      * Creates new form EmpresaInterface
@@ -21,10 +21,10 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
         initComponents();
     }
 
-    public TelaCadastroEmpresa(CadastroController controller) {
-        this.controller = controller;
-        initComponents();
-    }
+    // public TelaCadastroEmpresa(CadastroController controller) {
+    //     this.controller = controller;
+    //     initComponents();
+    // }
 
     /**
      * This method is called from within the constructor to initialize the form.

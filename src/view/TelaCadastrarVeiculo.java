@@ -4,6 +4,8 @@
  */
 package view;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Carlos Eduardo
@@ -207,4 +209,18 @@ public class TelaCadastrarVeiculo extends javax.swing.JPanel {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
+
+    public static void main(String[] args) {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                JFrame frame = new JFrame("Teste TelaCadastrarVeiculo");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.add(new TelaCadastrarVeiculo());
+                frame.pack();
+                frame.setLocationRelativeTo(null); // Centraliza a janela
+                frame.setVisible(true);
+            }
+        });
+    }
+
 }

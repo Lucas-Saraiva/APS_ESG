@@ -4,10 +4,10 @@ import java.sql.*;
 
 public class VeiculoDB extends DB {
     
-    public void inserir(int modelo, String ano, String placa, Combustivel combustivel, double mediaKmL, Empresa empresa){
+    public void inserir(Modelo modelo, String ano, String placa, Combustivel combustivel, double mediaKmL, Empresa empresa){
         try (PreparedStatement stmt = con.prepareStatement("INSERT INTO public.veiculo (modelo, ano, placa, combustivel, mediaKmL, empresa) VALUES (?, ?, ?, ?, ?, ?)")) {
 
-            stmt.setInt(1, modelo);
+            stmt.setInt(1, modelo.getCodigo());
             stmt.setString(2, ano);
             stmt.setString(3, placa);
             stmt.setInt(4, combustivel.getCodigo());
@@ -15,10 +15,9 @@ public class VeiculoDB extends DB {
             stmt.setString(6, empresa.getCodigo());
 
             stmt.executeUpdate();
-            System.out.println("Inserido com sucesso!");
 
      } catch (Exception e) {
-         System.err.println("Erro ao inserir Veiculo: " + e.getMessage());
+         System.err.println("Erro ao inserir Veiculo " + placa + ": " + e.getMessage());
      }
     }
 
@@ -35,10 +34,11 @@ public class VeiculoDB extends DB {
             }
 
         } catch (Exception e) {
-            System.err.println("Erro ao buscar Veiculo: " + e.getMessage());
+            System.err.println("Erro ao buscar Veiculo " + codigo + ": " + e.getMessage());
         }
 
         return codigo;
+
     }
 
     public Veiculo selecionar(String placa){
@@ -49,7 +49,6 @@ public class VeiculoDB extends DB {
 
         int codigo = 0;
         int idModelo = 0;
-        int idMarca = 0;
         String ano = null;
         double mediaKmL = 0.00;
 
@@ -82,9 +81,11 @@ public class VeiculoDB extends DB {
             veiculo = new Veiculo(codigo, placa, modelo, marca, ano, combustivel, mediaKmL, empresa);
 
         } catch (Exception e) {
-            System.err.println("Erro ao buscar Veiculo: " + e.getMessage());
+            System.err.println("Erro ao buscar Veiculo " + codigo + ": " + e.getMessage());
         }
+
         return veiculo;
+
     }
 
 }

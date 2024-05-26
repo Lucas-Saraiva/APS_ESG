@@ -20,10 +20,11 @@ public class CombustivelDB extends DB {
             }
 
         } catch (Exception e) {
-            System.err.println("Erro ao buscar Veiculo: " + e.getMessage());
+            System.err.println("Erro ao buscar Combustível " + codigo + ": " + e.getMessage());
         }
 
         return nome;
+
     }
 
 }

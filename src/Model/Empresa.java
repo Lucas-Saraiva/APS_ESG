@@ -25,6 +25,7 @@ public class Empresa {
 		empresa = empresaDB.selecionar(codigo);
 		empresaDB.fecha();
 
+		this.setCodigo(empresa.getCodigo());
 		this.setCnpj(empresa.getCnpj());
 		this.setNome(empresa.getNome());
 		this.setDataInicio(empresa.getDataInicio());
@@ -137,10 +138,21 @@ public class Empresa {
 	}
 
 	public static void main(String[] args){
-		Empresa empresa = new Empresa("UBER");
+
+		Date dataInicial = new Date();
+
+		Empresa empresa = new Empresa("99");
 
 		System.out.println(empresa.getNome());
 		System.out.println(empresa.getCnpj());
+
+		
+		Empresa empresaNova = new Empresa("RAPI", "28529348293824", "Rapi", dataInicial, dataInicial, "Natureza", "Reduzir emissão de co2");
+
+		EmpresaDB empresaDB = new EmpresaDB();
+		empresaDB.conexao();
+		empresaDB.inserir(empresaNova.getCodigo(), empresaNova.getNome(), empresaNova.getCnpj(), empresaNova.getDataInicio(), empresaNova.getDataFinal(), empresaNova.getMeta(), empresaNova.getIndicador());
+		empresaDB.fecha();
 
 	}
 

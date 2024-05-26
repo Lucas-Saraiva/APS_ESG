@@ -1,12 +1,10 @@
 package Model;
 
-import java.util.Date;
-
 public class Run {
 
 	public static void main(String[] args) {
 
-		Date dataAtual = new Date();
+		// Date dataAtual = new Date();
 
 		// Empresa uber = new Empresa("UBER", "39528420492942", "Uber", dataAtual, dataAtual, "Redução de Gás Carbonico", "Ambiental");
 

@@ -13,7 +13,7 @@ public class Modelo {
         modeloDB.conexao();
         int codigoMarca = modeloDB.consultaCodigoMarca(codigo);
         this.marca = new Marca(codigoMarca);
-        this.setNome(modeloDB.consultarNome(codigo));
+        this.setNome(modeloDB.consultaCodigo(codigo));
         modeloDB.fecha();
 
     }

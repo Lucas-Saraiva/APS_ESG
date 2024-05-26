@@ -33,7 +33,7 @@ public class Combustivel {
 
 	public static void main(String[] args){
 
-		Combustivel combustivel = new Combustivel(2);
+		Combustivel combustivel = new Combustivel(3);
 
 		System.out.println(combustivel.getNome());
 
