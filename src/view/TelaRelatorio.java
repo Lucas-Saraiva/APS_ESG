@@ -4,18 +4,20 @@
  */
 package view;
 
-import java.awt.BorderLayout;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JPanel;
+
 import Model.Viagem;
 import controller.ControllerRelatorios;
 
-import org.jfree.chart.*;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.DefaultCategoryDataset;
 
 /**
  *
@@ -172,6 +174,26 @@ public class TelaRelatorio extends javax.swing.JPanel {
             System.out.println(viagem.getCo2Emitido());
         }
 
+        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+        for (Viagem viagem : viagens) {
+            // Adicionando os dados de CO2 emitido para cada viagem ao dataset
+            dataset.addValue(viagem.getCo2Emitido(), "CO2 Emitido", viagem.getId()); // Suponha que getId() retorne um identificador único para cada viagem
+        }
+    
+        // Criando o gráfico de barras
+        JFreeChart barChart = ChartFactory.createBarChart(
+            "CO2 Emitido por Viagem",
+            "Viagem",
+            "CO2 Emitido",
+            dataset
+        );
+    
+        // Exibindo o gráfico em um painel
+        ChartPanel chartPanel = new ChartPanel(barChart);
+        painelGraficosRelatorios.removeAll();
+        painelGraficosRelatorios.add(chartPanel);
+        painelGraficosRelatorios.revalidate();
+        painelGraficosRelatorios.repaint();
 
     }//GEN-LAST:event_btnMostrarRelatoriosActionPerformed
 
