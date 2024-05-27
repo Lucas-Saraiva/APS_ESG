@@ -6,14 +6,12 @@ import Model.ViagemDB;
 
 public class ControllerRelatorios {
     
-    public List<Viagem> dadosRelatorios(){
-
-        java.util.Date data = new java.util.Date();
+    public List<Viagem> dadosRelatorios(java.util.Date dataInicial, java.util.Date dataFinal){
 
         ViagemDB viagemDB = new ViagemDB();
         viagemDB.conexao();
 
-        List<Viagem> viagens = viagemDB.selecionar(data, data);
+        List<Viagem> viagens = viagemDB.selecionar(dataInicial, dataFinal);
 
         return viagens;
 

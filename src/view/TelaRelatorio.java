@@ -4,11 +4,18 @@
  */
 package view;
 
+import java.awt.BorderLayout;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JPanel;
+import Model.Viagem;
+import controller.ControllerRelatorios;
+
+import org.jfree.chart.*;
 
 /**
  *
@@ -16,11 +23,14 @@ import java.util.logging.Logger;
  */
 public class TelaRelatorio extends javax.swing.JPanel {
 
+    private ControllerRelatorios controller;
+
     /**
      * Creates new form TelaRelatorio
      */
     public TelaRelatorio() {
         initComponents();
+        this.controller = new ControllerRelatorios();
     }
 
     /**
@@ -155,6 +165,14 @@ public class TelaRelatorio extends javax.swing.JPanel {
         } catch (ParseException ex) {
             Logger.getLogger(TelaCadastroEmpresa.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
+
+        List<Viagem> viagens = this.controller.dadosRelatorios(inicialRelatorio, finalRelatorio);
+
+        for ( Viagem viagem : viagens ){
+            System.out.println(viagem.getCo2Emitido());
+        }
+
+
     }//GEN-LAST:event_btnMostrarRelatoriosActionPerformed
 
 
