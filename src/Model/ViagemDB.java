@@ -7,15 +7,15 @@ import java.util.List;
 
 public class ViagemDB extends DB {
 
-    public void inserir(Veiculo veiculo, java.util.Date dataCorrida, double distancia, double co2Emitido, Pais pais, Empresa empresa){
+    public void inserir(String placa, java.util.Date dataCorrida, double distancia, double co2Emitido, String pais, String empresa){
         try (PreparedStatement stmt = con.prepareStatement("INSERT INTO public.viagem (placa, data_corrida, distancia, co2_emitido, pais, empresa) VALUES (?, ?, ?, ?, ?, ?)")) {
 
-            stmt.setString(1, veiculo.getPlaca());
+            stmt.setString(1, placa);
             stmt.setDate(2, new java.sql.Date(dataCorrida.getTime()));
             stmt.setDouble(3, distancia);
             stmt.setDouble(4, co2Emitido);
-            stmt.setString(5, pais.getCodigo());
-            stmt.setString(6, empresa.getCodigo());
+            stmt.setString(5, pais);
+            stmt.setString(6, empresa);
 
             stmt.executeUpdate();
 

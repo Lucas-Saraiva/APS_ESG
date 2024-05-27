@@ -4,15 +4,15 @@ import java.sql.*;
 
 public class VeiculoDB extends DB {
     
-    public void inserir(Modelo modelo, String ano, String placa, Combustivel combustivel, double mediaKmL, Empresa empresa){
+    public void inserir(int modelo, String ano, String placa, int combustivel, double mediaKmL, String empresa){
         try (PreparedStatement stmt = con.prepareStatement("INSERT INTO public.veiculo (modelo, ano, placa, combustivel, mediaKmL, empresa) VALUES (?, ?, ?, ?, ?, ?)")) {
 
-            stmt.setInt(1, modelo.getCodigo());
+            stmt.setInt(1, modelo);
             stmt.setString(2, ano);
             stmt.setString(3, placa);
-            stmt.setInt(4, combustivel.getCodigo());
+            stmt.setInt(4, combustivel);
             stmt.setDouble(5, mediaKmL);
-            stmt.setString(6, empresa.getCodigo());
+            stmt.setString(6, empresa);
 
             stmt.executeUpdate();
 

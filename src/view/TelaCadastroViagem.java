@@ -6,6 +6,8 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import Model.Viagem;
+
 public class TelaCadastroViagem extends javax.swing.JPanel {
 
     public TelaCadastroViagem() {
@@ -216,6 +218,9 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
         } catch (ParseException ex) {
             Logger.getLogger(TelaCadastroEmpresa.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
+
+        // Viagem viagem = new Viagem(empresaViagem, placaVeiculo, dtCorridaViagem, ABORT, null)
+
     }//GEN-LAST:event_btnSalvarViagemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -6,10 +6,15 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import controller.ControllerCadastroEmpresa;
+
 public class TelaCadastroEmpresa extends javax.swing.JPanel {
+
+    private ControllerCadastroEmpresa controller;
 
     public TelaCadastroEmpresa() {
         initComponents();
+        this.controller = new ControllerCadastroEmpresa();
     }
 
     /**
@@ -274,6 +279,7 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
     }//GEN-LAST:event_btnLimparEmpresaActionPerformed
 
     private void btnSalvarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarEmpresaActionPerformed
+        String codigoEmpresa = campoCodigoEmpresa.getText();
         String nomeEmpresa = campoNomeEmpresa.getText();
         String cnpjEmpresa = campoCNPJ.getText();
         String indicadorEmpresa = campoIndicador.getText();
@@ -281,6 +287,7 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
         String paisEmpresa = campoPais.getText();
         Date finalEmpresa = null;
         Date inicioEmpresa = null;
+
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         try {
             finalEmpresa = formatador.parse(campoDataFinal.getText());
@@ -288,6 +295,9 @@ public class TelaCadastroEmpresa extends javax.swing.JPanel {
         } catch (ParseException ex) {
             Logger.getLogger(TelaCadastroEmpresa.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
+
+        controller.salvarEmpresa(codigoEmpresa, cnpjEmpresa, nomeEmpresa, inicioEmpresa, finalEmpresa, metaEmpresa, indicadorEmpresa);
+
     }//GEN-LAST:event_btnSalvarEmpresaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

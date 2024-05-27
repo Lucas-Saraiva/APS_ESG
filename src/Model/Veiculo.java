@@ -128,7 +128,7 @@ public class Veiculo {
 
 		VeiculoDB veiculoDB = new VeiculoDB();
 		veiculoDB.conexao();
-		veiculoDB.inserir(veiculoNovo.getModelo(), veiculoNovo.getAno(), veiculoNovo.getPlaca(), veiculoNovo.getCombustivel(), veiculoNovo.getMediaKML(), veiculoNovo.getEmpresa());
+		veiculoDB.inserir(veiculoNovo.getModelo().getCodigo(), veiculoNovo.getAno(), veiculoNovo.getPlaca(), veiculoNovo.getCombustivel().getCodigo(), veiculoNovo.getMediaKML(), veiculoNovo.getEmpresa().getCodigo());
 
 		veiculoDB.fecha();
 

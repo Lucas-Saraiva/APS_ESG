@@ -137,7 +137,7 @@ public class Viagem {
 
 		Viagem viagem = new Viagem(empresa, veiculo, dataFinal, 270.00, pais);
 
-		viagemDB.inserir(viagem.getVeiculo(), viagem.getDataCorrida(), viagem.getDistancia(), viagem.getCo2Emitido(), viagem.getPais(), viagem.getEmpresa());
+		// viagemDB.inserir(viagem.getVeiculo(), viagem.getDataCorrida(), viagem.getDistancia(), viagem.getCo2Emitido(), viagem.getPais(), viagem.getEmpresa());
 
 		// viagemDB.selecionar(dataInicial, dataFinal);
 		// viagemDB.selecionar();

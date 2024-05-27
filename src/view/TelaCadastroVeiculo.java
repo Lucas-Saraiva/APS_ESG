@@ -1,9 +1,14 @@
 package view;
 
+import controller.ControllerCadastroVeiculo;
+
 public class TelaCadastroVeiculo extends javax.swing.JPanel {
+
+    private ControllerCadastroVeiculo controller;
 
     public TelaCadastroVeiculo() {
         initComponents();
+        this.controller = new ControllerCadastroVeiculo();
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -215,10 +220,14 @@ public class TelaCadastroVeiculo extends javax.swing.JPanel {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String anoVeiculo = campoAnoVeiculo.getText();
-        String combustivelVeiculo = campoCombustivelVeiculo.getText();
+        String placaVeiculo = campoPlacaVeiculo.getText();
+        int combustivelVeiculo = Integer.parseInt(campoCombustivelVeiculo.getText());
         String codEmpresaVeiculo = campoCodEmpresaVeiculo.getText();
-        String mediaKmLVeiculo = campoMediaKmLVeiculo.getText();
-        String modeloVeiculo = campoModeloVeiculo.getText();
+        double mediaKmLVeiculo = Double.parseDouble(campoMediaKmLVeiculo.getText());
+        int modeloVeiculo = Integer.parseInt(campoModeloVeiculo.getText());
+
+        this.controller.salvarVeiculo(modeloVeiculo, anoVeiculo, placaVeiculo, combustivelVeiculo, mediaKmLVeiculo, codEmpresaVeiculo);
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
 
