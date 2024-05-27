@@ -115,17 +115,12 @@ public class TelaInicial extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarRelatoriosActionPerformed
-
-        TelaRelatorios telaRelatorios = new TelaRelatorios();
-
-        telaRelatorios.apresentaRelatorios();
-
-/*        javax.swing.JFrame frame = new javax.swing.JFrame("Cadastro de Veículos");
+        javax.swing.JFrame frame = new javax.swing.JFrame("Cadastro de Relatórios");
         frame.setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE);
-        frame.getContentPane().add(new TelaCadastroVeiculo());
+        frame.getContentPane().add(new TelaRelatorio());
         frame.pack();
         frame.setLocationRelativeTo(null); // Centraliza a janela na tela
-        frame.setVisible(true);*/
+        frame.setVisible(true);
     }//GEN-LAST:event_btnMostrarRelatoriosActionPerformed
 
     private void btnCadastrarEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarEmpresaActionPerformed
