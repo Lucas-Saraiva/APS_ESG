@@ -115,6 +115,11 @@ public class TelaInicial extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnMostrarRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarRelatoriosActionPerformed
+
+        TelaRelatorios telaRelatorios = new TelaRelatorios();
+
+        telaRelatorios.apresentaRelatorios();
+
 /*        javax.swing.JFrame frame = new javax.swing.JFrame("Cadastro de Veículos");
         frame.setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE);
         frame.getContentPane().add(new TelaCadastroVeiculo());

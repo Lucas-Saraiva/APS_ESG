@@ -1,10 +1,6 @@
 package Model;
 
-import java.text.ParseException;
-// import java.util.ArrayList;
-// import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 public class Viagem {
 
@@ -120,38 +116,6 @@ public class Viagem {
 
 	public double calculaCo2Emitido() {
 		return ((this.getDistancia() / this.getVeiculo().getMediaKML()) * 2.3 ) / 1000;
-	}
-
-    public static void main (String[] args) throws ParseException{
-
-		// SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		// Date dataInicial = sdf.parse("20/05/2024");
-		Date dataFinal = new Date();
-
-		ViagemDB viagemDB = new ViagemDB();
-		viagemDB.conexao();
-
-		Empresa empresa = new Empresa("UBER");
-		Veiculo veiculo = new Veiculo("CG3Y2I");
-		Pais pais = new Pais("BR");
-
-		Viagem viagem = new Viagem(empresa, veiculo, dataFinal, 270.00, pais);
-
-		// viagemDB.inserir(viagem.getVeiculo(), viagem.getDataCorrida(), viagem.getDistancia(), viagem.getCo2Emitido(), viagem.getPais(), viagem.getEmpresa());
-
-		// viagemDB.selecionar(dataInicial, dataFinal);
-		// viagemDB.selecionar();
-
-		List<Viagem> viagens = viagemDB.selecionar(dataFinal, dataFinal);
-
-		for ( Viagem viageml : viagens ){
-			System.out.println(viageml.getCodigo());
-		}
-
-		// System.out.println(viagem.getDistancia());
-
-		viagemDB.fecha();
-
 	}
 
 }
