@@ -1,14 +1,20 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package view;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
- * @author Marisa
+ * @author Carlos Eduardo
  */
-public class TelaRelatorio extends javax.swing.JFrame {
+public class TelaRelatorio extends javax.swing.JPanel {
 
     /**
      * Creates new form TelaRelatorio
@@ -26,164 +32,143 @@ public class TelaRelatorio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jPanel1 = new javax.swing.JPanel();
-        btnApagarRelatorios = new javax.swing.JButton();
-        btnConsultarRelatorios = new javax.swing.JButton();
+        textoEmpresaRelatorio = new javax.swing.JLabel();
+        textoPaisRelatorio = new javax.swing.JLabel();
+        textoDataInicialRelatorio = new javax.swing.JLabel();
+        textoDataFinalRelatorio = new javax.swing.JLabel();
+        campoDataInicialRelatorio = new javax.swing.JTextField();
+        campoPaisRelatorio = new javax.swing.JTextField();
+        campoEmpresaRelatorio = new javax.swing.JTextField();
+        campoDataFinalRelatorio = new javax.swing.JTextField();
+        painelGraficosRelatorios = new javax.swing.JPanel();
+        btnLimparRelatorios = new javax.swing.JButton();
+        btnMostrarRelatorios = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel1.setText("Empresa:");
+        textoEmpresaRelatorio.setText("Empresa:");
 
-        jLabel2.setText("País:");
+        textoPaisRelatorio.setText("País:");
 
-        jLabel3.setText("Data de Início:");
+        textoDataInicialRelatorio.setText("Data de Início:");
 
-        jLabel4.setText("Data Final:");
+        textoDataFinalRelatorio.setText("Data Final:");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        painelGraficosRelatorios.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout painelGraficosRelatoriosLayout = new javax.swing.GroupLayout(painelGraficosRelatorios);
+        painelGraficosRelatorios.setLayout(painelGraficosRelatoriosLayout);
+        painelGraficosRelatoriosLayout.setHorizontalGroup(
+            painelGraficosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 940, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        painelGraficosRelatoriosLayout.setVerticalGroup(
+            painelGraficosRelatoriosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 438, Short.MAX_VALUE)
         );
 
-        btnApagarRelatorios.setText("Apagar");
-        btnApagarRelatorios.addActionListener(new java.awt.event.ActionListener() {
+        btnLimparRelatorios.setText("Limpar");
+        btnLimparRelatorios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnApagarRelatoriosActionPerformed(evt);
+                btnLimparRelatoriosActionPerformed(evt);
             }
         });
 
-        btnConsultarRelatorios.setText("Consultar");
-        btnConsultarRelatorios.addActionListener(new java.awt.event.ActionListener() {
+        btnMostrarRelatorios.setText("Mostrar");
+        btnMostrarRelatorios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultarRelatoriosActionPerformed(evt);
+                btnMostrarRelatoriosActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(painelGraficosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                            .addComponent(textoDataInicialRelatorio)
+                            .addComponent(textoPaisRelatorio)
+                            .addComponent(textoEmpresaRelatorio))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campoDataInicialRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoPaisRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoEmpresaRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
+                        .addComponent(textoDataFinalRelatorio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoDataFinalRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnConsultarRelatorios)
+                        .addComponent(btnMostrarRelatorios)
                         .addGap(18, 18, 18)
-                        .addComponent(btnApagarRelatorios)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addComponent(btnLimparRelatorios)))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoEmpresaRelatorio)
+                    .addComponent(campoEmpresaRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoPaisRelatorio)
+                    .addComponent(campoPaisRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnApagarRelatorios)
-                    .addComponent(btnConsultarRelatorios))
+                    .addComponent(textoDataInicialRelatorio)
+                    .addComponent(textoDataFinalRelatorio)
+                    .addComponent(campoDataInicialRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoDataFinalRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLimparRelatorios)
+                    .addComponent(btnMostrarRelatorios))
                 .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addComponent(painelGraficosRelatorios, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
-
-        pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnApagarRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApagarRelatoriosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnApagarRelatoriosActionPerformed
+    private void btnLimparRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparRelatoriosActionPerformed
+        campoDataFinalRelatorio.setText("");
+        campoDataInicialRelatorio.setText("");
+        campoEmpresaRelatorio.setText("");
+        campoPaisRelatorio.setText("");
+        painelGraficosRelatorios.removeAll();
+    }//GEN-LAST:event_btnLimparRelatoriosActionPerformed
 
-    private void btnConsultarRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarRelatoriosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnConsultarRelatoriosActionPerformed
+    private void btnMostrarRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarRelatoriosActionPerformed
+        String empresaRelatorio = campoEmpresaRelatorio.getText();
+        String paisRelatorio = campoPaisRelatorio.getText();
+        Date inicialRelatorio = null;
+        Date finalRelatorio = null;
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaRelatorio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            finalRelatorio = formatador.parse(campoDataFinalRelatorio.getText());
+            inicialRelatorio = formatador.parse(campoDataInicialRelatorio.getText());
+        } catch (ParseException ex) {
+            Logger.getLogger(TelaCadastroEmpresa.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
-        //</editor-fold>
+    }//GEN-LAST:event_btnMostrarRelatoriosActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaRelatorio().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnApagarRelatorios;
-    private javax.swing.JButton btnConsultarRelatorios;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JButton btnLimparRelatorios;
+    private javax.swing.JButton btnMostrarRelatorios;
+    private javax.swing.JTextField campoDataFinalRelatorio;
+    private javax.swing.JTextField campoDataInicialRelatorio;
+    private javax.swing.JTextField campoEmpresaRelatorio;
+    private javax.swing.JTextField campoPaisRelatorio;
+    private javax.swing.JPanel painelGraficosRelatorios;
+    private javax.swing.JLabel textoDataFinalRelatorio;
+    private javax.swing.JLabel textoDataInicialRelatorio;
+    private javax.swing.JLabel textoEmpresaRelatorio;
+    private javax.swing.JLabel textoPaisRelatorio;
     // End of variables declaration//GEN-END:variables
 }
