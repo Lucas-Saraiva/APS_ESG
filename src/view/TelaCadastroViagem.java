@@ -6,19 +6,10 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import Model.Empresa;
-import Model.Pais;
-import Model.Veiculo;
-import Model.Viagem;
-import controller.ControllerCadastroViagem;
-
 public class TelaCadastroViagem extends javax.swing.JPanel {
-
-    private ControllerCadastroViagem controller;
 
     public TelaCadastroViagem() {
         initComponents();
-        this.controller = new ControllerCadastroViagem();
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -36,8 +27,8 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
         campoPaisViagem = new javax.swing.JTextField();
         btnLimparViagem = new javax.swing.JButton();
         btnSalvarViagem = new javax.swing.JButton();
-        textoPaisViagem1 = new javax.swing.JLabel();
-        campoPlacaVeiculo = new javax.swing.JTextField();
+        textoPlacaViagem = new javax.swing.JLabel();
+        campoPlacaViagem = new javax.swing.JTextField();
 
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         setPreferredSize(new java.awt.Dimension(400, 400));
@@ -94,47 +85,51 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
             }
         });
 
-        textoPaisViagem1.setText("Placa:");
+        textoPlacaViagem.setText("Placa:");
 
-        campoPlacaVeiculo.setToolTipText("");
+        campoPlacaViagem.setToolTipText("");
+        campoPlacaViagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoPlacaViagemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 52, Short.MAX_VALUE)
+                .addGap(0, 43, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(textoPaisViagem1)
-                            .addComponent(textoEmpresaViagem))
-                        .addGap(78, 78, 78)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoPlacaVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(campoEmpresaViagem, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(Titulo)
+                        .addGap(68, 68, 68))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textoDistanciaPercViagem)
-                            .addComponent(textoPaisViagem)
                             .addComponent(textoDtCorridaViagem)
-                            .addComponent(btnSalvarViagem, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(18, 18, 18)
+                            .addComponent(textoPaisViagem)
+                            .addComponent(textoEmpresaViagem)
+                            .addComponent(textoPlacaViagem))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(campoDistanciaPercViagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoPlacaViagem, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoPaisViagem, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnLimparViagem)
-                            .addComponent(campoDtCorridaViagem, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(55, 55, 55))
+                            .addComponent(campoDtCorridaViagem, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoDistanciaPercViagem, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoEmpresaViagem, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(Titulo)
+                .addGap(67, 67, 67)
+                .addComponent(btnSalvarViagem)
+                .addGap(18, 18, 18)
+                .addComponent(btnLimparViagem)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(Titulo)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -142,8 +137,8 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
                     .addComponent(campoEmpresaViagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(textoPaisViagem1)
-                    .addComponent(campoPlacaVeiculo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textoPlacaViagem)
+                    .addComponent(campoPlacaViagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoPaisViagem)
@@ -156,11 +151,11 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(textoDistanciaPercViagem)
                     .addComponent(campoDistanciaPercViagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSalvarViagem)
                     .addComponent(btnLimparViagem))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -168,16 +163,16 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(49, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -202,32 +197,26 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
         campoDtCorridaViagem.setText("");
         campoEmpresaViagem.setText("");
         campoPaisViagem.setText("");
-        campoPlacaVeiculo.setText("");
+        campoPlacaViagem.setText("");
     }//GEN-LAST:event_btnLimparViagemActionPerformed
 
     private void btnSalvarViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarViagemActionPerformed
-        double distanciaPercViagem = Double.parseDouble(campoDistanciaPercViagem.getText());
+        String distanciaPercViagem = campoDistanciaPercViagem.getText();
         String empresaViagem = campoEmpresaViagem.getText();
         String paisViagem = campoPaisViagem.getText();
+        String placaViagem = campoPlacaViagem.getText();
         Date dtCorridaViagem = null;
-        String placaVeiculo = campoPlacaVeiculo.getText();
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         try {
             dtCorridaViagem = formatador.parse(campoDtCorridaViagem.getText());
         } catch (ParseException ex) {
             Logger.getLogger(TelaCadastroEmpresa.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
-
-
-        Empresa empresa = new Empresa(empresaViagem);
-        Veiculo veiculo = new Veiculo(placaVeiculo);
-        Pais pais = new Pais(paisViagem);
-
-        Viagem viagem = new Viagem(empresa, veiculo, dtCorridaViagem, distanciaPercViagem, pais);
-
-        this.controller.salvarViagem(placaVeiculo, dtCorridaViagem, distanciaPercViagem, viagem.getCo2Emitido(), paisViagem, empresaViagem);
-
     }//GEN-LAST:event_btnSalvarViagemActionPerformed
+
+    private void campoPlacaViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoPlacaViagemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoPlacaViagemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Titulo;
@@ -237,12 +226,12 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
     private javax.swing.JTextField campoDtCorridaViagem;
     private javax.swing.JTextField campoEmpresaViagem;
     private javax.swing.JTextField campoPaisViagem;
-    private javax.swing.JTextField campoPlacaVeiculo;
+    private javax.swing.JTextField campoPlacaViagem;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel textoDistanciaPercViagem;
     private javax.swing.JLabel textoDtCorridaViagem;
     private javax.swing.JLabel textoEmpresaViagem;
     private javax.swing.JLabel textoPaisViagem;
-    private javax.swing.JLabel textoPaisViagem1;
+    private javax.swing.JLabel textoPlacaViagem;
     // End of variables declaration//GEN-END:variables
 }
