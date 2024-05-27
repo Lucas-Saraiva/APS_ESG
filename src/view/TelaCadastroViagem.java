@@ -6,10 +6,19 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import Model.Empresa;
+import Model.Pais;
+import Model.Veiculo;
+import Model.Viagem;
+import controller.ControllerCadastroViagem;
+
 public class TelaCadastroViagem extends javax.swing.JPanel {
+
+    private ControllerCadastroViagem controller;
 
     public TelaCadastroViagem() {
         initComponents();
+        this.controller = new ControllerCadastroViagem();
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -193,19 +202,31 @@ public class TelaCadastroViagem extends javax.swing.JPanel {
         campoDtCorridaViagem.setText("");
         campoEmpresaViagem.setText("");
         campoPaisViagem.setText("");
+        campoPlacaVeiculo.setText("");
     }//GEN-LAST:event_btnLimparViagemActionPerformed
 
     private void btnSalvarViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarViagemActionPerformed
-        String distanciaPercViagem = campoDistanciaPercViagem.getText();
+        double distanciaPercViagem = Double.parseDouble(campoDistanciaPercViagem.getText());
         String empresaViagem = campoEmpresaViagem.getText();
         String paisViagem = campoPaisViagem.getText();
         Date dtCorridaViagem = null;
+        String placaVeiculo = campoPlacaVeiculo.getText();
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
         try {
             dtCorridaViagem = formatador.parse(campoDtCorridaViagem.getText());
         } catch (ParseException ex) {
             Logger.getLogger(TelaCadastroEmpresa.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
+
+
+        Empresa empresa = new Empresa(empresaViagem);
+        Veiculo veiculo = new Veiculo(placaVeiculo);
+        Pais pais = new Pais(paisViagem);
+
+        Viagem viagem = new Viagem(empresa, veiculo, dtCorridaViagem, distanciaPercViagem, pais);
+
+        this.controller.salvarViagem(placaVeiculo, dtCorridaViagem, distanciaPercViagem, viagem.getCo2Emitido(), paisViagem, empresaViagem);
+
     }//GEN-LAST:event_btnSalvarViagemActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
