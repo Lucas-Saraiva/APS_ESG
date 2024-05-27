@@ -26,7 +26,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="49" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="49" max="32767" attributes="0"/>
@@ -35,10 +35,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="56" max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
+              <EmptySpace pref="42" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -59,43 +59,42 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="27" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-                          <Component id="Titulo" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="textoPaisViagem1" min="-2" max="-2" attributes="0"/>
+                              <Component id="textoEmpresaViagem" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="campoPlacaVeiculo" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="campoEmpresaViagem" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="textoDtCorridaViagem" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="btnSalvarViagem" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnLimparViagem" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="textoDistanciaPercViagem" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textoModeloViagem" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textoEmpresaViagem" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="textoPaisViagem" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="campoDistanciaPercViagem" max="32767" attributes="0"/>
-                                          <Component id="campoEmpresaViagem" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <Component id="campoPaisViagem" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                          <Component id="campoModeloViagem" alignment="0" min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="campoDtCorridaViagem" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
+                              <Component id="textoDistanciaPercViagem" min="-2" max="-2" attributes="0"/>
+                              <Component id="textoPaisViagem" min="-2" max="-2" attributes="0"/>
+                              <Component id="textoDtCorridaViagem" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnSalvarViagem" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="campoDistanciaPercViagem" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoPaisViagem" min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="btnLimparViagem" min="-2" max="-2" attributes="0"/>
+                              <Component id="campoDtCorridaViagem" min="-2" pref="80" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="42" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                  <Component id="Titulo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -104,12 +103,22 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                   <Component id="Titulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textoModeloViagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="campoModeloViagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="textoEmpresaViagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campoEmpresaViagem" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="textoPaisViagem1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campoPlacaVeiculo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="textoPaisViagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campoPaisViagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="textoDtCorridaViagem" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="campoDtCorridaViagem" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -121,20 +130,10 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textoEmpresaViagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="campoEmpresaViagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="textoPaisViagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="campoPaisViagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnLimparViagem" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSalvarViagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnLimparViagem" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace pref="23" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -146,11 +145,6 @@
               <Font name="Arial" size="18" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cadastro de Viagem"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="textoModeloViagem">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Modelo:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="textoDtCorridaViagem">
@@ -171,11 +165,6 @@
         <Component class="javax.swing.JTextField" name="campoDtCorridaViagem">
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoDtCorridaViagemActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JTextField" name="campoModeloViagem">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="campoModeloViagemActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="textoEmpresaViagem">
@@ -213,6 +202,16 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSalvarViagemActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="textoPaisViagem1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Placa:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="campoPlacaVeiculo">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
